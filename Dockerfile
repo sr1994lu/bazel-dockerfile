@@ -20,7 +20,12 @@ RUN set -ex \
     gpg --keyserver keyserver.pgp.com --recv-keys "$key" ; \
   done
 
-RUN apt-get install xz-utils -y
+RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | tee /etc/apt/sources.list.d/bazel.list \
+  && wget -q https://bazel.build/bazel-release.pub.gpg -O- | apt-key add - \
+  && apt-get update \
+  && apt-get install bazel xz-utils -y \
+  && apt-get upgrade bazel -y
+
 
 ENV NPM_CONFIG_LOGLEVEL info
 ARG NODE_VERSION=7.10.0
@@ -54,12 +59,6 @@ RUN yarn init -y \
   && yarn global add express-generator --prefix /usr/local \
   && yarn global add typescript --prefix /usr/local \
   && yarn global add typings --prefix /usr/local
-
-RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | tee /etc/apt/sources.list.d/bazel.list \
-  && wget -q https://bazel.build/bazel-release.pub.gpg -O- | apt-key add - \
-  && apt-get update \
-  && apt-get install bazel -y \
-  && apt-get upgrade bazel -y
 
 RUN apt-get autoremove \
   && apt-get autoclean
