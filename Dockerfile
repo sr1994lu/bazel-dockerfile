@@ -58,7 +58,7 @@ RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8
   && apt-get update \
   && apt-get install bazel -y \
   && apt-get upgrade bazel -y \
-  && apt-get purge xz-utils --auto-remove -y
+  && apt-get purge xz-utils --auto-remove -y \
   && apt-get clean \
   && apt-get autoremove \
   && dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | xargs apt-get -y purge
