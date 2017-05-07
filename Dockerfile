@@ -52,7 +52,7 @@ RUN set -ex \
   && gpg --batch --verify yarn.js.asc yarn.js \
   && rm yarn.js.asc \
   && mv yarn.js /usr/local/bin/yarn \
-  && chmod +x /usr/local/bin/yarn \
+  && chmod +x /usr/local/bin/yarn
 
 RUN yarn init -y \
   && yarn global add nodemon --prefix /usr/local \
