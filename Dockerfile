@@ -21,7 +21,7 @@ RUN set -ex \
   done
 
 RUN apt-get update \
-  && apt-get install xz-utils openjdk-8-jdk -y
+  && apt-get install xz-utils -y
 
 ENV NPM_CONFIG_LOGLEVEL info
 ARG NODE_VERSION=7.10.0
