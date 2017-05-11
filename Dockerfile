@@ -29,7 +29,7 @@ RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8
 
 ENV NPM_CONFIG_LOGLEVEL info
 ARG NODE_VERSION=7.10.0
-ARG YARN_VERSION=0.23.4
+ARG YARN_VERSION=0.24.2
 
 RUN curl -SLO "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz" \
   && curl -SLO "https://nodejs.org/dist/v${NODE_VERSION}/SHASUMS256.txt.asc" \
@@ -58,7 +58,7 @@ RUN yarn init -y \
   && yarn global add nodemon --prefix /usr/local \
   && yarn global add express-generator --prefix /usr/local \
   && yarn global add typescript --prefix /usr/local \
-  && yarn global add typings --prefix /usr/local
+  && yarn global add webpack-cli --prefix /usr/local
 
 RUN apt-get autoremove \
   && apt-get autoclean
