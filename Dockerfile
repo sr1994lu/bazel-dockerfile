@@ -57,8 +57,8 @@ RUN set -ex \
 RUN yarn init -y \
   && yarn global add nodemon --prefix /usr/local \
   && yarn global add express-generator --prefix /usr/local \
-  && yarn global add typescript --prefix /usr/local \
-  && yarn global add webpack-cli --prefix /usr/local
+  && yarn global add webpack-cli --prefix /usr/local \
+  && yarn global add create-react-app --prefix /usr/local
 
 RUN apt-get autoremove \
   && apt-get autoclean
