@@ -26,7 +26,6 @@ RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8
   && apt-get install bazel xz-utils -y \
   && apt-get upgrade bazel -y
 
-
 ENV NPM_CONFIG_LOGLEVEL info
 ARG NODE_VERSION=7.10.0
 ARG YARN_VERSION=0.25.2
@@ -59,6 +58,7 @@ RUN yarn init -y \
   && yarn global add express-generator --prefix /usr/local \
   && yarn global add webpack-cli --prefix /usr/local \
   && yarn global add create-react-app --prefix /usr/local \
+  && yarn global add vue-cli --prefix /usr/local \
   && yarn global add flow-typed --prefix /usr/local
 
 RUN apt-get autoremove \
