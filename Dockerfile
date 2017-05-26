@@ -28,7 +28,7 @@ RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8
 
 ENV NPM_CONFIG_LOGLEVEL info
 ARG NODE_VERSION=7.10.0
-ARG YARN_VERSION=0.25.2
+ARG YARN_VERSION=0.25.3
 
 RUN curl -SLO "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz" \
   && curl -SLO "https://nodejs.org/dist/v${NODE_VERSION}/SHASUMS256.txt.asc" \
