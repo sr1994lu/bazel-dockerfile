@@ -25,11 +25,11 @@ RUN  curl -fSL -o yarn.js "https://yarnpkg.com/downloads/${YARN_VERSION}/yarn-le
   && chmod +x /usr/local/bin/yarn
 
 RUN yarn init -y \
-  && yarn global add express-generator@v4.15.0 --prefix /usr/local \
+  && yarn global add express-generator@4.15.0 --prefix /usr/local \
   && yarn global add webpack-cli@1.3.3 --prefix /usr/local \
-  && yarn global add create-react-app@v1.0.7 --prefix /usr/local \
-  && yarn global add vue-cli@v2.8.0 --prefix /usr/local \
-  && yarn global add flow-typed@v2.1.2 --prefix /usr/local
+  && yarn global add create-react-app@1.3.1 --prefix /usr/local \
+  && yarn global add vue-cli@v2.8.2 --prefix /usr/local \
+  && yarn global add flow-typed@2.1.2 --prefix /usr/local
 
 RUN apt-get autoremove \
   && apt-get autoclean
