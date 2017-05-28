@@ -54,12 +54,11 @@ RUN set -ex \
   && chmod +x /usr/local/bin/yarn
 
 RUN yarn init -y \
-  && yarn global add nodemon --prefix /usr/local \
-  && yarn global add express-generator --prefix /usr/local \
-  && yarn global add webpack-cli --prefix /usr/local \
-  && yarn global add create-react-app --prefix /usr/local \
-  && yarn global add vue-cli --prefix /usr/local \
-  && yarn global add flow-typed --prefix /usr/local
+  && yarn global add express-generator@v4.15.0 --prefix /usr/local \
+  && yarn global add webpack-cli@1.3.3 --prefix /usr/local \
+  && yarn global add create-react-app@v1.0.7 --prefix /usr/local \
+  && yarn global add vue-cli@v2.8.0 --prefix /usr/local \
+  && yarn global add flow-typed@v2.1.2 --prefix /usr/local
 
 RUN apt-get autoremove \
   && apt-get autoclean
