@@ -6,7 +6,7 @@ RUN groupadd --gid 1000 node \
 RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | tee /etc/apt/sources.list.d/bazel.list \
   && wget -q https://bazel.build/bazel-release.pub.gpg -O- | apt-key add - \
   && apt-get update \
-  && apt-get install bazel dirmngr -y --no-install-recommands \
+  && apt-get install bazel dirmngr -y \
   && apt-get upgrade bazel -y \
   && rm -rf /var/lib/apt/lists/* \
   && apt-get autoremove \
