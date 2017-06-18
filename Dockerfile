@@ -20,7 +20,7 @@ RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8
   && gpg --keyserver pool.sks-keyservers.net --recv-keys 56730D5401028683275BD23C23EFEFE93C4CFFFE
 
 ENV NPM_CONFIG_LOGLEVEL info
-ENV NODE_VERSION 8.1.0
+ENV NODE_VERSION 8.1.2
 
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz" \
   && curl -SLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc" \
@@ -55,5 +55,3 @@ RUN yarn init -y \
   && yarn global add create-react-app@latest --silent --prefix /usr/local \
   && yarn global add vue-cli@latest --silent --prefix /usr/local \
   && yarn global add flow-typed@latest --silent --prefix /usr/local
-
-
