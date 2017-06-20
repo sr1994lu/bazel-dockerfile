@@ -62,4 +62,5 @@ RUN yarn init -y \
   && yarn global add webpack-cli@latest --silent --prefix /usr/local \
   && yarn global add create-react-app@latest --silent --prefix /usr/local \
   && yarn global add vue-cli@latest --silent --prefix /usr/local \
+  && yarn global add next@beta --silent --prefix /usr/local \
   && yarn global add flow-typed@latest --silent --prefix /usr/local
