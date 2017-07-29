@@ -25,7 +25,8 @@ RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt testing jdk1.
   && apt-get update \
   && apt-get install bazel -y \
   && apt-get upgrade bazel -y \
-  && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/* \
+  && apt-get clean all
 
 ENV NPM_CONFIG_LOGLEVEL info
 ENV NODE_VERSION 8.2.1
